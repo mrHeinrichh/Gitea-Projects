@@ -1,0 +1,30 @@
+name: flutter_yun_ceng_kiwi
+description: 阿里游戏盾flutter组件
+version: 0.0.1
+
+environment:
+  sdk: ">=2.16.0 <3.0.0"
+  flutter: ">=1.10.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.0.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.flutter_yun_ceng_kiwi
+        pluginClass: FlutterYunCengKiwiPlugin
+      ios:
+        pluginClass: FlutterYunCengKiwiPlugin
+      macos:
+        pluginClass: FlutterYunCengKiwiPlugin
+      windows:
+        pluginClass: FlutterYunCengKiwiPluginCApi

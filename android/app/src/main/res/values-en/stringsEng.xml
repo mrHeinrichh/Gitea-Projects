@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancelButton">Cancel</string>
+    <string name="sendOption">Send to Friend</string>
+    <string name="shareOption">Share to Moment</string>
+    <string name="now">Now</string>
+    <string name="justNow">Just Now</string>
+    <string name="myChatMinutes"> minutes ago</string>
+    <string name="myChatHours"> hours ago</string>
+    <string name="myChatDays"> days ago</string>
+</resources>

@@ -1,0 +1,357 @@
+name: jxim_client
+description: A new Flutter project.
+publish_to: "none"
+version: 1.0.77+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+  flutter: ">=3.13.9"
+  # d211f42860350d914a5ad8102f9ec32764dc6d06
+
+platforms:
+  android:
+  ios:
+  macos:
+  windows:
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.4
+  permission_handler: ^10.4.5
+  bot_toast: ^4.0.2
+  http: ^1.1.0
+  protobuf: ^2.0.0
+  # aes
+  encrypt: 5.0.1
+  # 验证码输入框
+  pin_code_fields: ^7.4.0
+  # SQLite 插件
+  sqflite: ^2.0.2+1
+  sqflite_common_ffi:
+  # 本地存储
+  shared_preferences: ^2.0.15
+  # 左右滑动删除组件
+  flutter_slidable: ^3.1.0
+  # 扩展TextField组件
+  extended_text_field: ^12.0.1
+  extended_text: 11.1.0
+  # 扫码
+  mobile_scanner: 3.4.1
+  zxing2: ^0.2.3
+  scan: ^1.6.0
+  #二维码
+  pretty_qr_code: 3.3.0
+  # 视频播放器
+  video_player: 2.8.3
+  # 常用工具类库 包含SharedPreferences Util, Screen Util
+  flutter_screenutil: ^5.8.4
+  # 这个插件允许 Flutter 应用程序发现网络连接并相应地配置自己。它可以区分蜂窝和 WiFi 连接
+  connectivity_plus: ^2.3.2
+  #文件路径
+  path_provider: ^2.0.12
+
+  file_picker: 8.0.0+1
+
+  # 唤醒锁
+  # 图片截取
+  image_cropper: ^1.5.1
+  # 视频压缩
+  video_compress: 3.1.2
+  # FFMPEG 插件
+  ffmpeg_kit_flutter_full_gpl: 6.0.3
+  #高斯模糊 插件
+  blurhash_ffi: ^1.2.6
+
+  # 震动
+  vibration: ^1.9.0
+  #地区码
+  country_list_pick:
+    path: plugin/country_list_pick
+  #屏幕旋转
+  auto_orientation: ^2.2.1
+  #显示网页
+  webview_flutter: ^3.0.4
+  # 状态管理 GetX
+  get: ^4.6.6
+  # 渲染 svg图片
+  flutter_svg: ^2.0.9
+  # JWT处理
+  jwt_decoder: ^2.0.1
+
+  shimmer_animation: ^2.1.0+1
+
+  chinese_font_library: 1.1.0
+
+  # 拦截返回, 最小化安卓app
+  move_to_background: ^1.0.2
+
+  # GridView拖拽排序
+  reorderable_grid: ^1.0.10
+
+  # 监控电量
+  battery_plus: ^5.0.3
+
+  flutter_staggered_grid_view: ^0.7.0
+
+  rich_editor: ^0.0.8
+  flutter_quill: 8.5.5
+  ########### 私有git库（需要改源码或自定义的包）###########
+  # 文件内容显示
+
+  super_player:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/tencent_player_sdk.git
+
+  camerawesome:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/camerawesome.git
+  #    path: plugin/camerawesome
+
+  im_camera:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/im_camera.git
+  #    path: plugin/im_camera
+
+  emoji_regex:
+  im_common:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/im_common.git
+
+  agora:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/agora.git
+
+  cashier:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/cashier.git
+  # 图片编辑
+  image_editor:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/image_editor.git
+
+  screenshot_callback:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/flutter_screenshot.git
+
+  im_diff_plugin:
+    # path: plugin/im_diff_plugin
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/im_diff_plugin.git
+
+  sound_mode:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/sound_mode.git
+  #    path: plugin/sound_mode
+
+  google_maps_flutter:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/google_maps_flutter.git
+
+  #  查看大图
+  photo_view:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/photo_view.git
+
+  # 平台推广
+  openinstall_flutter_plugin:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/flutter_openinstall.git
+
+  im_video_compressor:
+    git:
+      url: https://2a5d16efb3659d15f497f5672357bf7a2780692d@gitea.cyberbot.work/jx-im-plugin/im_video_compressor.git
+
+  ########### 内嵌插件包放这里 ###########
+  # 剪切板支持图片
+  flutter_pasteboard:
+    path: plugin/flutter_pasteboard
+  # 录音和播放音频
+  flutter_sound_lite:
+    path: plugin/flutter_sound_lite-8.5.0
+  # 检测手机麦克风是否被其他应用占用
+  microphone_in_use:
+    path: plugin/microphone_in_use
+  # 音频通道调试插件
+  audio_session: 0.1.19
+  all_sensors: 0.4.2
+  audioplayers: ^5.2.0
+  # 跳转webview
+  url_launcher: ^6.2.1
+  # 状态管理
+  events_widget:
+    path: plugin/events_widget
+  # 多图片选择器
+  wechat_assets_picker:
+    path: plugin/flutter_wechat_assets_picker_new
+
+  # 保存图片到相册
+  image_gallery_saver:
+    path: plugin/image_gallery_saver
+
+  # 包信息
+  package_info_plus: ^4.2.0
+  # 设备信息
+  device_info_plus: ^9.1.1
+  # 音视频通话
+  # 盾
+  flutter_yun_ceng_kiwi:
+    path: plugin/flutter_yun_ceng_kiwi
+  flutter_captcha:
+    path: plugin/flutter_captcha
+  #获取手机本地联系人
+  fast_contacts: 3.1.2
+  custom_pop_up_menu:
+    path: plugin/custom_popup_menu
+  #页面辨认使用
+  visibility_detector: ^0.3.3
+  #选择相册
+  image_picker: ^0.8.6+2
+  #下载QR使用
+  screenshot: 2.1.0
+  #表情包
+  emojis: ^0.9.9
+  open_filex:
+    path: plugin/open_filex-master
+    #从SIM卡获取资料使用
+  flutter_sim_country_code: ^0.1.2
+  #辨认手机号
+  phone_numbers_parser: ^8.0.0
+  #压缩图片
+  image_compression_flutter: ^1.0.3
+  #转换中文字为拼音
+  lpinyin: ^2.0.3
+
+  # 长按并放开发送文件
+  desktop_drop:
+    path: plugin/desktop_drop
+  flutter_switch: ^0.3.2
+
+  #堆栈信息采集
+  sentry_flutter: 8.6.0
+
+  #桌面端粘贴图片
+  pasteboard: ^0.2.0
+
+  #联系人列表(A-Z分组)
+  azlistview:
+    path: plugin/az_list_view
+
+  in_app_notification:
+    path: plugin/flutter_in_app_notification
+
+  #同步锁
+  synchronized: ^3.1.0
+
+  #网络图片缓存
+  extended_image: ^8.1.1
+  wakelock_plus: ^1.1.1
+
+  flutter_local_notifications: ^15.1.1
+
+  #偵測link
+  flutter_linkify: ^6.0.0
+
+  volume_controller:
+
+  #聊天長列表動畫元件
+  flutter_spinkit: ^5.2.0
+  calendar_date_picker2: ^0.5.3
+  file_selector: ^1.0.1
+  sliver_tools: ^0.2.12
+  maps_flutter:
+    path: plugin/maps_flutter
+  geolocator: ^11.0.0
+  location: ^5.0.3
+  cloud_firestore: ^4.14.0
+  firebase_core: ^2.24.2
+  geocoding: ^3.0.0
+  intl: ^0.18.1
+  simple_html_css: ^4.0.0
+  
+  install_plugin: ^2.1.0
+  dio: ^5.4.3+1
+  lottie_tgs: ^2.7.1
+  lottie: ^2.7.0
+  dio_smart_retry: ^6.0.0
+
+  collection: ^1.17.2
+
+  pretty_dio_logger: ^1.3.1
+  fl_chart: ^0.63.0
+  disk_space: ^0.2.1
+  scrollable_positioned_list: ^0.2.3
+  logger: ^1.4.0
+  html_unescape: ^2.0.0
+  flutter_app_badger: ^1.5.0
+  flutter_markdown: ^0.6.10
+  # 自定义下拉刷新动画
+  custom_refresh_indicator: ^3.1.1
+  pdf_render: 1.4.0
+  share_plus: ^7.2.2
+  language_code: ^0.5.3+2
+  simple_shadow: ^0.3.1
+  dismissible_page: ^1.0.2
+  flip_card: ^0.7.0
+  characters: ^1.3.0
+  el_tooltip: ^2.0.0
+
+  # 贴脸感应器
+  proximity_sensor: 1.3.3
+
+  pointycastle: ^3.0.0
+  crypto: ^3.0.3
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/message/
+    - assets/images/
+    - assets/images/message_new/
+    - assets/images/mypage/
+    - assets/images/group/
+    - assets/sound/
+    - assets/images/voice/
+    - assets/images/square_new/
+    - assets/images/login_new/
+    - assets/images/home/
+    - assets/icons/
+    - assets/icons/file/
+    - assets/svgs/
+    - assets/lottie/
+    - assets/svgs/wallet/
+    - assets/images/common/
+    - assets/images/svg_icon/
+    - assets/images/new_resources/
+    - assets/images/lottie/
+    - assets/images/lottie/react_emoji01/
+    - assets/images/red_packet/
+    - assets/images/red_packet/message/
+    - assets/lang/
+    - assets/images/reel/
+    - assets/images/message/emojis/
+    - assets/images/moments/
+  fonts:
+    - family: Caveat
+      fonts:
+        - asset: assets/fonts/Caveat-Han.ttf
+    - family: plusjakartasans
+      fonts:
+        - asset: assets/fonts/plusjakartasans_bold.ttf
+        - asset: assets/fonts/plusjakartasans_extrabold.ttf
+        - asset: assets/fonts/plusjakartasans_medium.ttf
+        - asset: assets/fonts/plusjakartasans_regular.ttf
+        - asset: assets/fonts/plusjakartasans_semibold.ttf
+    - family: pingfang
+      fonts:
+        - asset: assets/fonts/PingFang_SC_Medium.otf
+        - asset: assets/fonts/PingFang_SC_regular.otf

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorBlack">#333333</color>
+    <color name="colorGray">#E6E6E6</color>
+    <color name="colorBackground">#5128D4</color>
+
+    <color name="colorAvatarRedLight">#FE9D7F</color>
+    <color name="colorAvatarRedDark">#F44545</color>
+
+    <color name="colorAvatarOrangeLight">#FFAE7B</color>
+    <color name="colorAvatarOrangeDark">#F07F38</color>
+
+    <color name="colorAvatarYellowLight">#FBC87B</color>
+    <color name="colorAvatarYellowDark">#FFA800</color>
+
+    <color name="colorAvatarGreenLight">#AAF490</color>
+    <color name="colorAvatarGreenDark">#52D05E</color>
+
+    <color name="colorAvatarBluePurpleLight">#85A3F9</color>
+    <color name="colorAvatarBluePurpleDark">#5D60F6</color>
+
+    <color name="colorAvatarBlueLight">#7EC2F4</color>
+    <color name="colorAvatarBlueDark">#3B90E1</color>
+
+    <color name="colorAvatarBlueGreenLight">#6BF0F9</color>
+    <color name="colorAvatarBlueGreenDark">#1EAECD</color>
+
+    <color name="colorAvatarPurpleLight">#D784FC</color>
+    <color name="colorAvatarPurpleDark">#B35AD1</color>
+    <color name="colorNotificationBg">#FFFFFF</color>
+</resources>

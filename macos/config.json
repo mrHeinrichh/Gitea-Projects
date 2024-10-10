@@ -1,0 +1,8 @@
+{
+  "title": "Hey Talk",
+  "icon": "./splash_logo.icns",
+  "contents": [
+    { "x": 448, "y": 344, "type": "link", "path": "/Applications" },
+    { "x": 192, "y": 344, "type": "file", "path": "/Users/yunwahlee/Desktop/release1/HeyProfile.app" }
+  ]
+}

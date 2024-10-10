@@ -1,0 +1,17 @@
+.DS_Store
+.dart_tool/
+
+.packages
+.pub/
+pubspec.lock
+
+build/
+.idea/
+.vscode/
+android/.classpath
+android/.project
+
+fvm
+doc/
+.env
+*.iml

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancelButton">取消</string>
+    <string name="sendOption">发送给朋友</string>
+    <string name="shareOption">发送到动态</string>
+    <string name="now">现在</string>
+    <string name="justNow">刚刚</string>
+    <string name="myChatMinutes"> 分钟前</string>
+    <string name="myChatHours"> 小时前</string>
+    <string name="myChatDays"> 天前</string>
+</resources>

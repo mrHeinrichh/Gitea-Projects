@@ -1,0 +1,12 @@
+"NSAppleMusicUsageDescription" = "是否允许此App访问你的媒体资料库？";
+"NSCameraUsageDescription" = "是否允许此App访问你的相机,以便你拍摄图片发送给好友或通话？";
+"NSContactsUsageDescription" = "是否允许此App获取设备的权限以读取本地联系人?";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "是否允许此APP访问您的地理位置信息，以便获取您的周边好友？";
+"NSLocationAlwaysUsageDescription" = "是否允许此App始终访问你的用户位置？以便获取您的周边好友";
+"NSLocationWhenInUseUsageDescription" = "是否允许此App运行时访问你的用户位置？以便获取您的周边好友";
+"NSMicrophoneUsageDescription" = "是否允许此App访问你的麦克风，以便你发送语音消息或通话？";
+"NSPhotoLibraryAddUsageDescription" = "是否允许聊天在查看大图是保存图片到相册？";
+"NSPhotoLibraryUsageDescription" = "是否允许此App访问你的相册,以便你发送图片给好友？";
+"NSSpeechRecognitionUsageDescription" = "是否允许此App识别你的语音？";
+"Privacy - Microphone Usage Description" = "是否允许此App获得麦克风权限?";
+"Privacy - Camera Usage Description" = "是否允许此App获得相机权限?";

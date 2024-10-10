@@ -1,0 +1,96 @@
+include: package:flutter_lints/flutter.yaml
+linter:
+  rules:
+    # require_trailing_commas: true
+    prefer_const_constructors: true
+    prefer_const_constructors_in_immutables: true
+    prefer_const_declarations: true
+    use_key_in_widget_constructors: true
+    always_use_package_imports: true
+    control_flow_in_finally: true
+    discarded_futures: false
+    throw_in_finally: true
+    use_build_context_synchronously: false
+    no_logic_in_create_state: true
+    non_constant_identifier_names: false
+    constant_identifier_names: false
+    prefer_const_literals_to_create_immutables: true
+    implementation_imports: true
+    prefer_typing_uninitialized_variables: true
+    prefer_interpolation_to_compose_strings: false
+    # type_annotate_public_apis: true
+    avoid_print: true
+    unnecessary_statements: true
+    depend_on_referenced_packages: false
+    # tighten_type_of_initializing_formals: true
+analyzer:
+  # strong-mode:
+  #   implicit-casts: true # 禁止隐式类型转换
+  #   implicit-dynamic: true # 禁止动态类型推断
+  exclude:
+    - "config/*.dart"
+    - "config/**/*.dart"
+    - "bin/*.dart"
+    - "bin/**/*.dart"
+
+  errors:
+    depend_on_referenced_packages: error
+    avoid_renaming_method_parameters: error
+    unrelated_type_equality_checks: error
+    no_wildcard_variable_uses: error
+    collection_methods_unrelated_type: error
+    implementation_imports: error
+    prefer_typing_uninitialized_variables: error
+    avoid_unnecessary_containers: error
+    unused_element: error
+    use_string_in_part_of_directives: error
+    non_constant_identifier_names: error
+    use_super_parameters: error
+    curly_braces_in_flow_control_structures: error
+    camel_case_extensions: error
+    await_only_futures: error
+    no_leading_underscores_for_local_identifiers: error
+    invalid_use_of_protected_member: error
+    unused_import: error
+    unused_local_variable: error
+    dead_null_aware_expression: error
+    dead_code: error
+    library_prefixes: error
+    empty_catches: error
+    sized_box_for_whitespace: error
+    file_names: error
+    duplicate_import: error
+    unnecessary_this: error
+    avoid_function_literals_in_foreach_calls: error
+    prefer_final_fields: error
+    prefer_null_aware_operators: error
+    prefer_const_constructors: error
+    camel_case_types: error
+    avoid_print: error
+    unnecessary_overrides: error
+    must_call_super: error
+    prefer_collection_literals: error
+    annotate_overrides: error
+    no_logic_in_create_state: error
+    body_might_complete_normally_nullable: error
+    unnecessary_non_null_assertion: error
+    library_private_types_in_public_api: ignore
+    dangling_library_doc_comments: error
+    sort_child_properties_last: error
+    always_use_package_imports: error
+    unnecessary_brace_in_string_interps: error
+    unnecessary_nullable_for_final_variable_declarations: error
+    unnecessary_import: error
+    prefer_is_empty: error
+    prefer_conditional_assignment: error
+    unnecessary_string_interpolations: error
+    unnecessary_const: error
+    must_be_immutable: error
+    deprecated_member_use: ignore
+    unnecessary_null_comparison: ignore
+    overridden_fields: ignore
+    prefer_function_declarations_over_variables: ignore
+    provide_deprecation_message: ignore
+    hash_and_equals: error
+
+    # use_build_context_synchronously: error
