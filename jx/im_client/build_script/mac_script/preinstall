@@ -1,0 +1,20 @@
+#!/bin/bash
+
+APP_NAME="HeyTalk"
+
+# Check if the app is running and terminate it
+if pgrep -x "$APP_NAME" > /dev/null; then
+    echo "$APP_NAME is running, attempting to terminate it..."
+    pkill "$APP_NAME"
+    sleep 2
+    
+    # Force kill if still running
+    if pgrep -x "$APP_NAME" > /dev/null; then
+        echo "$APP_NAME is still running. Force killing..."
+        pkill -9 "$APP_NAME"
+    fi
+else
+    echo "$APP_NAME is not running."
+fi
+
+exit 0

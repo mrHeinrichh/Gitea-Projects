@@ -1,0 +1,107 @@
+import 'package:flutter/material.dart';
+
+import 'package:im_common/im_common.dart';
+import 'package:zikzak_inappwebview/zikzak_inappwebview.dart';
+
+class IMWebView extends StatefulWidget {
+  //網址
+  final String url;
+
+  //標題
+  final String title;
+
+  const IMWebView({
+    super.key,
+    required this.url,
+    required this.title,
+  });
+
+  @override
+  State<IMWebView> createState() => _IMWebViewState();
+}
+
+class _IMWebViewState extends State<IMWebView> {
+  InAppWebViewController? _controller;
+
+  //紀錄是否正在加載中
+  bool isLoading = true;
+
+  @override
+  Widget build(BuildContext context) {
+
+    return Scaffold(
+      appBar: ImAppBar(
+        title: widget.title,
+        onPressedLeading: () => isCanBack(),
+      ),
+      body: WillPopScope(
+        onWillPop: () async {
+          await isCanBack();
+          return false;
+        },
+        child: Stack(
+          children: [
+            Align(
+              alignment: Alignment.center,
+              child: InAppWebView(
+                initialUrlRequest: URLRequest(url: WebUri.uri(Uri.parse(widget.url))),
+                initialOptions: webOptions(),
+                onWebViewCreated: (controller) {
+                  webController(controller);
+                },
+                onLoadStart: (InAppWebViewController controller, Uri? url) {
+                  setState(() {
+                    isLoading = true;
+                  });
+                },
+                onLoadStop:
+                    (InAppWebViewController controller, Uri? url) async {
+                  setState(() {
+                    isLoading = false;
+                  });
+                },
+                onProgressChanged:
+                    (InAppWebViewController controller, int progress) {},
+              ),
+            ),
+            Align(alignment: Alignment.center, child: _buildProgressBar()),
+          ],
+        ),
+      ),
+    );
+  }
+
+  // webview的設定
+  InAppWebViewGroupOptions webOptions() {
+    return InAppWebViewGroupOptions(
+        android: AndroidInAppWebViewOptions(
+            useHybridComposition: true //解決部分android裝置不能輸入中文問題
+            ));
+  }
+
+  //webview的控制器
+  InAppWebViewController? webController(controller) {
+    _controller = controller;
+    return _controller;
+  }
+
+  //檢查webview是否可以返回上一頁
+  isCanBack() async {
+    bool? canBack = await _controller?.canGoBack();
+    if (canBack!) {
+      await _controller?.goBack();
+    } else {
+      if (mounted) {
+        Navigator.of(context).pop();
+      }
+    }
+  }
+
+  //加載進度圈
+  Widget _buildProgressBar() {
+    if (isLoading) {
+      return const CircularProgressIndicator();
+    }
+    return const SizedBox();
+  }
+}

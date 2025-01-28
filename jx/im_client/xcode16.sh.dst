@@ -1,0 +1,136 @@
+#!/bin/bash
+
+# Get the current Xcode version
+xcode_version=$(xcodebuild -version | grep "Xcode" | awk '{print $2}')
+
+# Extract major and minor version numbers (e.g., "16.1" -> major=16, minor=1)
+major_version=$(echo $xcode_version | cut -d '.' -f 1)
+minor_version=$(echo $xcode_version | cut -d '.' -f 2)
+
+
+# Compare the major version with 16, if major is 16 or higher, we're good
+if [ "$major_version" -gt 16 ] || { [ "$major_version" -eq 16 ] && [ "$minor_version" -ge 0 ]; }; then
+    echo "Current Xcode version ($xcode_version) is greater than or equal to version 16."
+    
+    #im_common
+    # Define the path to the pub-cache directory
+    pub_cache_dir="$HOME/.pub-cache"
+    pub_cache_git_dir="$HOME/.pub-cache/git"
+    pub_cache_hosted_dir="$HOME/.pub-cache/hosted/pub.dev"
+
+    # Search for directories containing 'im_common' in the pub-cache
+    echo "Searching for repositories containing 'im_common' in the pub-cache..."
+
+    # Find all directories in pub-cache that contain 'im_common'
+    repositories=$(find "$pub_cache_git_dir" -type d -name "*im_common*")
+
+    # If no repositories are found
+    if [ -z "$repositories" ]; then
+        echo "No repositories containing 'im_common' were found in the pub-cache."
+    fi
+
+    # Initialize a variable to hold the latest repository
+    latest_repo=""
+    latest_commit_date=""
+
+    # Loop through each found repository
+    for repo in $repositories; do
+        # Check if this is a Git repository
+        if [ -d "$repo/.git" ]; then
+            # Get the latest commit date for the repository
+            commit_date=$(cd "$repo" && git log -1 --format=%ci)
+
+            # If this is the first repo or it's newer than the last one found, update the latest_repo
+            if [ -z "$latest_commit_date" ] || [[ "$commit_date" > "$latest_commit_date" ]]; then
+                latest_commit_date="$commit_date"
+                latest_repo="$repo"
+            fi
+        fi
+    done
+
+    search_term="flutter_inappwebview"
+    replacement_term="zikzak_inappwebview: ^1.0.1"
+    # Output the latest repository
+    if [ -n "$latest_repo" ]; then
+        echo "The latest repository containing 'im_common' is:"
+        echo "$latest_repo"
+        echo "Latest commit date: $latest_commit_date"
+        # Now, search for the term in the pubspec.yaml file of the latest repo
+        echo "Searching for '$search_term' in pubspec.yaml..."
+
+        # Check if the term exists in the pubspec.yaml file
+        if grep -q "$search_term" "$latest_repo/pubspec.yaml"; then
+            echo "'$search_term' found in pubspec.yaml. Replacing it with '$replacement_term'."
+            
+            # Perform the replacement from the search_term to the end of the line
+            sed -i "" "s/\($search_term.*\)/$replacement_term/" "$latest_repo/pubspec.yaml"
+            echo "Replacement complete."
+        fi
+    else
+        echo "No Git repositories found containing 'im_common'."
+    fi
+    
+    #rich_editor
+    # Define the package name you're searching for
+    package_name="rich_editor"
+
+    # Find all the directories in the Pub cache that contain the package_name
+    echo "Searching for '$package_name' in the Pub cache..."
+
+    # Find all directories that contain the package name and are in the git cache
+    package_dirs=$(find "$pub_cache_hosted_dir" -type d -name "$package_name*")
+    
+    # If no directories are found
+    if [ -z "$package_dirs" ]; then
+        echo "No '$package_name' package found in the Pub cache."
+    fi
+
+    # Now, let's find the latest version of the package based on the version folder names
+    latest_version_dir=$(echo "$package_dirs" | sort -V | tail -n 1)
+    
+    # Output the latest version found
+    echo "The latest version of '$package_name' found in the Pub cache is located in:"
+    echo "$latest_version_dir"
+    
+    # Check if the term exists in the pubspec.yaml file
+    if grep -q "$search_term" "$latest_version_dir/pubspec.yaml"; then
+        echo "'$search_term' found in pubspec.yaml. Replacing it with '$replacement_term'."
+            
+        # Perform the replacement from the search_term to the end of the line
+        sed -i "" "s/\($search_term.*\)/$replacement_term/" "$latest_version_dir/pubspec.yaml"
+        echo "Replacement complete."
+    fi
+    
+    package_name="url_launcher_ios"
+    # Find all the directories in the Pub cache that contain the package_name
+    echo "Searching for '$package_name' in the Pub cache..."
+
+    # Find all directories that contain the package name and are in the git cache
+    package_dirs=$(find "$pub_cache_hosted_dir" -type d -name "$package_name*")
+    
+    # If no directories are found
+    if [ -z "$package_dirs" ]; then
+        echo "No '$package_name' package found in the Pub cache."
+    fi
+    
+    # Now, let's find the latest version of the package based on the version folder names
+    latest_version_dir=$(echo "$package_dirs" | sort -V | tail -n 1)
+    
+    # Output the latest version found
+    echo "The latest version of '$package_name' found in the Pub cache is located in:"
+    echo "$latest_version_dir"
+    
+    if [ -d "./git_cache.dst/$package_name" ]; then
+        cp -rf ./git_cache.dst/$package_name/* $latest_version_dir
+        # 检查复制操作是否成功
+        if [ $? -eq 0 ]; then
+          echo "url launcher iOS 覆盖成功 >> $latest_version_dir"
+        else
+          echo "url launcher iOS 复制内容失败，请检查。"
+        fi
+    fi
+    
+    
+else
+    echo "Current Xcode version ($xcode_version) is lower than version 16."
+fi

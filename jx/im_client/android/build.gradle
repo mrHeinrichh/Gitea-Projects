@@ -1,0 +1,46 @@
+buildscript {
+    ext.kotlin_version = '1.8.0'
+    repositories {
+        // 华为代理仓库配置
+        maven {
+            url 'https://developer.huawei.com/repo/'
+        }
+        maven { url "https://jitpack.io" }
+        google()
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:7.1.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // 华为代理依赖
+        classpath 'com.huawei.agconnect:agcp:1.9.1.301'
+
+        classpath 'com.google.gms:google-services:4.3.15'
+//        classpath 'io.sentry:sentry-android-gradle-plugin:3.11.1'
+    }
+}
+
+allprojects {
+    repositories {
+        // 华为代理仓库配置
+        maven {
+            url 'https://developer.huawei.com/repo/'
+        }
+        maven { url "https://jitpack.io" }
+        google()
+        mavenCentral()
+        jcenter()
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+    project.evaluationDependsOn(':app')
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}

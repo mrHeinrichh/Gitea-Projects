@@ -1,0 +1,96 @@
+#!/bin/bash
+
+./xcode16.sh
+
+xcode_version=$(xcodebuild -version | grep "Xcode" | awk '{print $2}')
+
+# Extract major and minor version numbers (e.g., "16.1" -> major=16, minor=1)
+major_version=$(echo $xcode_version | cut -d '.' -f 1)
+minor_version=$(echo $xcode_version | cut -d '.' -f 2)
+
+
+# Compare the major version with 16, if major is 16 or higher, we're good
+if [ "$major_version" -gt 16 ] || { [ "$major_version" -eq 16 ] && [ "$minor_version" -ge 0 ]; }; then
+  search_term="sentry_flutter"
+  replacement_term="sentry_flutter: 8.9.0"
+  # Check if the term exists in the pubspec.yaml file
+  if grep -q "$search_term" "./pubspec.yaml"; then
+    echo "'$search_term' found in pubspec.yaml. Replacing it with '$replacement_term'."
+            
+    # Perform the replacement from the search_term to the end of the line
+    sed -i "" "s/\($search_term.*\)/$replacement_term/" "./pubspec.yaml"
+    echo "Replacement complete."
+  fi
+  
+  sentry_search_term="pod 'Sentry', '~> 8.32.0'"
+  sentry_replacement_term="pod 'Sentry', '~> 8.36.0'"
+  # Check if the term exists in the pubspec.yaml file
+  if grep -q "$sentry_search_term" "./ios/Podfile"; then
+    echo "'$sentry_search_term' found in iOS Podfile. Replacing it with '$sentry_replacement_term'."
+            
+    # Perform the replacement from the search_term to the end of the line
+    sed -i "" "s/\($sentry_search_term.*\)/$sentry_replacement_term/" "./ios/Podfile"
+    echo "Replacement complete."
+  fi
+  
+  if grep -q "$sentry_search_term" "./macos/Podfile"; then
+    echo "'$sentry_search_term' found in MacOS Podfile. Replacing it with '$sentry_replacement_term'."
+            
+    # Perform the replacement from the search_term to the end of the line
+    sed -i "" "s/\($sentry_search_term.*\)/$sentry_replacement_term/" "./macos/Podfile"
+    echo "Replacement complete."
+  fi
+  
+  ssl_search_term="#Xcode16BoringSSL"
+  ssl_term_1="if target.name == 'BoringSSL-GRPC'"
+  ssl_term_2="  target.source_build_phase.files.each do |file|"
+  ssl_term_3="    if file.settings \&\& file.settings['COMPILER_FLAGS']"
+  ssl_term_4="      flags = file.settings['COMPILER_FLAGS'].split"
+  ssl_term_5="      flags.reject! { |flag| flag == '-GCC_WARN_INHIBIT_ALL_WARNINGS' }"
+  ssl_term_6="      file.settings['COMPILER_FLAGS'] = flags.join(' ')"
+  ssl_term_7="    end"
+  ssl_term_8="  end"
+  ssl_term_9="end"
+  
+  # Run grep -q to check if search term exists in the file
+  grep -q "$ssl_search_term" "./ios/Podfile"
+
+  # Capture the exit status (0 if found, 1 if not found)
+  ssl_result=$?
+  
+  if [ $ssl_result -eq 0 ]; then
+    # Extract all characters before the search term, which will be the spaces
+    spaces_before=$(grep -m 1 "$ssl_search_term" "./ios/Podfile" | sed -n "s/^\([[:space:]]*\).*/\1/p")
+    
+    ssl_term="$ssl_term_1\n$spaces_before$ssl_term_2\n$spaces_before$ssl_term_3\n$spaces_before$ssl_term_4\n$spaces_before$ssl_term_5\n$spaces_before$ssl_term_6\n$spaces_before$ssl_term_7\n$spaces_before$ssl_term_8\n$spaces_before$ssl_term_9"
+    echo "'$ssl_search_term' found in ios Podfile. $spaces_before Replacing it with '$ssl_term'."
+            
+    # Perform the replacement from the search_term to the end of the line
+    sed -i "" "s/\($ssl_search_term.*\)/$ssl_term/" "./ios/Podfile"
+    echo "Replacement complete."
+  fi
+  
+  # Run grep -q to check if search term exists in the file
+  grep -q "$ssl_search_term" "./macos/Podfile"
+
+  # Capture the exit status (0 if found, 1 if not found)
+  mac_ssl_result=$?
+  
+  if [ $mac_ssl_result -eq 0 ]; then
+    # Extract all characters before the search term, which will be the spaces
+        spaces_before=$(grep -m 1 "$ssl_search_term" "./macos/Podfile" | sed -n "s/^\([[:space:]]*\).*/\1/p")
+    
+    ssl_term="$ssl_term_1\n$spaces_before$ssl_term_2\n$spaces_before$ssl_term_3\n$spaces_before$ssl_term_4\n$spaces_before$ssl_term_5\n$spaces_before$ssl_term_6\n$spaces_before$ssl_term_7\n$spaces_before$ssl_term_8\n$spaces_before$ssl_term_9"
+    echo "'$ssl_search_term' found in macos Podfile. Replacing it with '$ssl_term'."
+            
+    # Perform the replacement from the search_term to the end of the line
+    sed -i "" "s/\($ssl_search_term.*\)/$ssl_term/" "./macos/Podfile"
+    echo "Replacement complete."
+  fi
+  
+  
+fi
+
+echo "重新获取插件（移除flutter_inappwebview）"
+flutter pub get
+exit 0

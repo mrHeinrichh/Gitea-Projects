@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+open /Applications/HeyTalk.app
+exit 0

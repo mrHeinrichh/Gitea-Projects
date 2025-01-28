@@ -1,8 +1,0 @@
-output
-.svn
-.packages
-.packages
-pubspec.lock
-.dart_tool
-example/.dart_tool
-example/.flutter-plugins-dependencies
