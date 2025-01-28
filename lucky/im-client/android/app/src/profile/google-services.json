@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "281960272701",
+    "project_id": "j-talk-eb0aa",
+    "storage_bucket": "j-talk-eb0aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:281960272701:android:480fcae5d8f5fce7b0eb54",
+        "android_client_info": {
+          "package_name": "com.luckyd.im"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "281960272701-vjihajucf4fd47s7jg941b2pu3m39d5p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAiSgwcH-Cuz_11sApnS1gXvUwGMKdlgE4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "281960272701-vjihajucf4fd47s7jg941b2pu3m39d5p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

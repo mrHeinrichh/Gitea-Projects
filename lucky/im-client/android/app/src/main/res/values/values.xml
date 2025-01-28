@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancelButton">取消</string>
+    <string name="sendOption">发送给朋友</string>
+    <string name="shareOption">发送到动态</string>
+</resources>

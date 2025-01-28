@@ -1,0 +1,114 @@
+import 'package:jxim_client/main.dart';
+import 'package:jxim_client/managers/call_mgr.dart';
+import 'package:jxim_client/utils/debug_info.dart';
+import 'package:jxim_client/utils/lang_util.dart';
+import 'package:jxim_client/utils/net/app_exception.dart';
+import 'package:jxim_client/utils/net/response_data.dart';
+import 'package:jxim_client/utils/toast.dart';
+import 'package:jxim_client/object/call.dart';
+import 'package:jxim_client/utils/localization/app_localizations.dart';
+import 'package:jxim_client/utils/net/request.dart';
+
+Future<ResponseData> getRTCToken(
+  int chatId,int isVideo, {
+  List<int> recipientIds = const <int>[],
+  String? channel_id,
+}) async {
+  Map<String, dynamic> data = {"chat_id": chatId};
+  data['recipient_id'] = recipientIds;
+  data['rtc_channel_id'] = channel_id ?? '';
+  data['video_call'] = isVideo;
+
+  return await Request.doPost("/im/call/rtc_token", data: data);
+}
+
+Future<ResponseData> getCallInviteList() async {
+  try {
+    final res = await Request.doPost("/im/call/invite_list");
+    return res;
+  } catch (e) {
+    if (e is NetworkException) {
+      pdebug(e.getMessage());
+      //Toast.showToast(e.getMessage());
+    } else {
+      pdebug(e.toString());
+    }
+    rethrow;
+  }
+}
+
+Future<ResponseData> updateCallStatus(
+  String rtcChannelId,
+  int status,
+  int duration,
+) async {
+  final data = <String, dynamic>{};
+  data['rtc_channel_id'] = rtcChannelId;
+  data['status'] = status;
+  data['duration'] = duration;
+
+  try {
+    final res = await Request.doPost("/im/call/update_status", data: data);
+    return res;
+  } catch (e) {
+    if (e is NetworkException) {
+      // Toast.showToast(e.getMessage());
+    } else {
+      if (e is CodeException) {
+        if (e.getPrefix() == 20508) {
+          Toast.showToast(localized(callConnectFailed));
+          objectMgr.callMgr.handleEvent(CallEvent.CallConnectFailed);
+        }
+      }
+      pdebug(e.toString());
+    }
+    rethrow;
+  }
+}
+
+Future<List<Call>?> getCallLog(int timestamp) async {
+  Map<String, dynamic> dataBody = {};
+
+  dataBody["start_from"] = timestamp;
+  dataBody["status"] = -1;
+
+  try {
+    final ResponseData res = await Request.doPost(
+      "/im/call/records",
+      data: dataBody,
+    );
+
+    if (res.success()) {
+      if (res.data != null) {
+        final List<Call> callLogs =
+            res.data.map<Call>((callItem) => Call.fromJson(callItem)).toList();
+        return callLogs;
+      }
+    } else {
+      return null;
+    }
+  } catch (e) {
+    pdebug('AppException: ${e.toString()}');
+    rethrow;
+  }
+}
+
+Future<bool> deleteLog(String rtcId) async {
+  Map<String, dynamic> dataBody = {};
+
+  dataBody["rtc_channel_id"] = rtcId;
+
+  try {
+    final ResponseData res = await Request.doPost(
+      "/im/call/delete_record",
+      data: dataBody,
+    );
+
+    if (res.success()) {
+      return true;
+    } else
+      throw ('${res.message}(${res.code})');
+  } catch (e) {
+    rethrow;
+  }
+}

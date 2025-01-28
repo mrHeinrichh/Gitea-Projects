@@ -1,0 +1,17 @@
+{
+  "titleFont" : "0xff000000",
+  "dayFont": "0xff1a1a1a",
+  "scaffoldBackground": "0xFFFFFFFF",
+  "testColor": "0xff7070FF",
+  "primaryColor": "0xFFDCDDF5",
+  "primaryAccentColor": "0xff7561E5",
+  "secondaryColor": "0xffC9C1F5",
+  "primaryIconColor": "0xff9FA3B8",
+  "activeIconColor": "0xff243BB2",
+  "inActiveIconColor": "0xffAEB4E4",
+  "dividerColor": "0xffE9E9EB",
+  "systemColor": "0xff999999",
+  "iOSSystemColor": "0xffF0F0F0",
+  "separatorColor": "0xff3C3C43",
+  "primaryTextColor": "0xff121212"
+}

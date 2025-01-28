@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="cancelButton">Cancel</string>
+    <string name="sendOption">Send to Friend</string>
+    <string name="shareOption">Share to Moment</string>
+</resources>

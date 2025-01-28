@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>destination</key>
+	<string>export</string>
+	<key>method</key>
+	<string>ad-hoc</string>
+	<key>provisioningProfiles</key>
+	<dict>
+		<key>com.luckyd.im</key>
+		<string>f5dc2fdf-8ce1-46e2-94b6-33e83c83a266</string>
+		<key>com.luckyd.im.ImagePublish</key>
+		<string>d5f3c469-1772-442e-a753-fd87c65df99c</string>
+		<key>com.luckyd.im.NotificationService</key>
+		<string>4c1134d5-ae30-47a6-8f0b-20dc0c8a98db</string>
+	</dict>
+	<key>signingCertificate</key>
+	<string>Apple Distribution</string>
+	<key>signingStyle</key>
+	<string>automatic</string>
+	<key>stripSwiftSymbols</key>
+	<true/>
+	<key>teamID</key>
+	<string>3QV93D8R4V</string>
+	<key>uploadBitcode</key>
+	<false/>
+	<key>uploadSymbols</key>
+	<false/>
+</dict>
+</plist>

@@ -1,0 +1,12 @@
+"NSAppleMusicUsageDescription" = "Allow App to access your media library?";
+"NSCameraUsageDescription" = "Allow App to access your camera so that you can take pictures and send them to friends or make calls?";
+"NSContactsUsageDescription" = "App would like to access your contacts to help you identify friends that are already using the app. You can then choose to add them if you wish";
+"NSLocationAlwaysAndWhenInUseUsageDescription" = "Allow App to access your location to get your nearby friends?";
+"NSLocationAlwaysUsageDescription" = "Allow App to access your location? In order to get your nearby friends";
+"NSLocationWhenInUseUsageDescription" = "Allow App to access your location when it is running? In order to obtain your nearby friends";
+"NSMicrophoneUsageDescription" = "App would like to access microphone to allow you to speak to your friends during phone calls, and to allow you to send voice messages to your friends";
+"NSPhotoLibraryAddUsageDescription" = "Allow App to view large images and save images to the album?";
+"NSPhotoLibraryUsageDescription" = "Allow App to access your photo album so you can send pictures to your friends?";
+"NSSpeechRecognitionUsageDescription" = "Allow App to recognize your voice?";
+"Privacy - Microphone Usage Description" = "Allow App to access microphone?";
+"Privacy - Camera Usage Description" = "Allow App to access camera?";

@@ -1,0 +1,102 @@
+// ignore_for_file: constant_identifier_names
+
+
+class Conf {
+  ///是否调试模式
+  static const isDebug = false;
+
+  /// 客户端版本
+  static const clientVersion = "1.0.1+56";
+
+  /// APP名称
+  static const appName = 'Hey';
+
+  /// 渠道
+  static const channelID = 'sg';
+
+  /// 设备类型
+  static const deviceType = '1';
+
+  /// 启动配置
+  static const launchConf = "";
+
+  /// app 配置文件地址 {platform}自动适应 android、apple_appstore、testflight
+  static const appConf = '';
+
+  /// 苹果 appid
+  static const iosAppid = '';
+
+  /// 苹果 testflight id
+  static const testflightId = "";
+
+
+  /// 隐私协议
+  static String privacyUrl = "";
+
+
+  /// 用户协议
+  static String privacy_user_Url = "";
+
+  ///扫码链接
+  static const scanAppUrl = "https://google.com?userId=";
+
+  /// 延迟保存数据到本地的频度,单位秒
+  static const DELAYED_SAVE_TABLE_INTERVAL = 10;
+
+  /// 是否清理本地缓存
+  static const cleanLocalStorage = false;
+
+  /// 是否清理sqflite缓存
+  static const cleanSqflite = false;
+
+  ///socket aes加密
+  static const socketCipher = true;
+
+  ///request aes加密
+  static const requestCipher = true;
+
+  ///头像压缩大小
+  static const headMin = 128;
+
+  ///动态缩略图大小
+  static const dynamicMin = 512;
+
+  ///消息图片压缩
+  static const messageMin = 256;
+
+  ///活动图片压缩
+  static const activityMin = 256;
+
+  static const minType = [headMin, dynamicMin, messageMin];
+
+  //RTC 初始化参数
+  static const String rtcAppID = "1661579404062";
+  static const String rtcAppKey = "TXUGLXC4K5AH0RTYJQ27RLUJKUE8X1ZF";
+  static const String rtcSecret = "8ox2ppscwgv2";
+
+  static const jpushAppKey = "2256ff3a9699df46386eef47";
+
+  static const jwtPassPhase = 'jxchat_app';
+
+  static const xorSecret = 'jxim';
+}
+
+class Urls {
+  //游戏盾默认节点组(当阶段朱设置空的时候，一定不过盾)
+  static const String KIWI_STARTS = "kiwi_";
+
+  //游戏盾的key
+  static const String DO_YXD_KEY =
+      "JjEQafrhgEDaS0WAYdLSkBxRQnTDrCWHtXoSGH+23T0+f+Lb8S9FdTSFjlW8w2txXIDyk1NFk5LCIBn1jULnOSOCVGDDL8s18fomiIAgXC7Vdb1IiyJjN/0MDOj+Ujngmo1cfW3gLB3nI9dctGK8clG70ui+YgNLtfZPHuTuFIZ+PPj/lZGT5Y5+ZFWmdnM5QgHfXtRf+PKjXxY2q1IqLou0YDxvEzse9REUbmaIfMyXA0UsCrAOZs2sZCwP0hRjA1VwonRiJaXMtz6JeaRhPz5g9twZ+jvkbgQuj4mTpOd5+SLQVqq0huDZeABPDdsFXoZJtDsuePikH1Fbp02zbigLMIm0qQFBFjBfesoCYIiRkFxgnL9xKc3B0+3cThvov1GqXv0BAHBRZ6DjYDFWOmK0S0prqMI2ZOad9Au4+xG/fZexGSdPzHFJd9YuDCThocg1lnMNdbl8xwKKJA/latr8hu9PaUGbqlCy36SN6FzPdLvsVsVpMVEZUUtP/AxPtA9iTNgaqzRXOXBIZ6bDU8splI5GwBqKqfx7DW5A3mlP3x96RkhRHIuymPPpGsR8MUz2s4gYhZ2xOhpjiQkTClc9J90JMmDFpUYW55MG29MvXGbgfg1odonW44/aejZL+wvm8AXW882e5XycR+KR6QKKglSE/SBJKimbMBHzvosrJNO2ufxx9/jlCfTzJYo86M9VNOxTw1yrH4xWoYsnC7NwumnrythVtNB5C6UQCChJHVg7/RThiu3PwjLHtTw75wuPcWeTEe/NB3r+hnplrG9QEpou+1YbNWEQntnn5xElpCQQe34+/eB3yP5Su/jBJQO00yxCUnEUoQnhgtHOm0Ur4O/Ohp5YzwIgxyJn5bEV1851B7hYQwEiHF7ULjD0ikpN52S6tc48LrEjGV9haARasmO7EPjvV/zUWkR/vSWb6akDtAvl09Pa4LJ16Ft1j6kfhJvd/zJkTy8YboMqM9EaqHreqqD9l+Elfrlir6xTeXlyuQzjV/oviL75dR59mexudKMmxC5twGVpoPq7f+Zz4t+ZtL/6zbYvHlmHF+RM2y/z159UKH22Li9RRqYbWfTInOLrLlZ1l9WJelmz89pQD+nDR4toqxlT5ivZST0MU8/2LPGcU/x4vZiF/As5cSm3250SopoKJKeBqe3N9ntlJ6vMXoMknI9WTsMGvxcnA3BS2K0PLXAm9EACM852bWyf7gpX3ON9JW8PGDTGvwlqe9mitrz3SRgQs6CJGCQyikNjZrR5W0LxCWk3wijYxSIzA2TAP7DmPbyPcTGs00le19+pmbr9DYiohDaZFV8/E/uFosSFDy7BfBe8Bm9+amc8UHx0Nx1W4XMz6BZpcoMdztJOJUI+RJ9TlCyOzoyDLTvM2YEOUgsbBcajjsBNXsgs4DrG0zHEgs2P+cPmDMZPA5EbZ3hX0D9swT3qMLjWBf1Wehmn94ZebbsmVA5x5hkW6gVJ2Nh2DeyFAgOADFSt4s94yB3W2mijt/2lUqB60JezKEincL2qzcbNvy0YR55LdFFBmaSfpamO8ZU9/uXpxYPhu4gVAB1Oub/y6L/czRzz9gXhb+n0ULxVWlYoo+I7Kv+Dzw0Re1r1ecYpLWmz6yLszgwyLHMt81KFJAr8lvbySxzrXm+ZUKp67IF3Uh+COtGzthDFRNoMx/ULHaPomWYiXJiDfop8W2dU092VHKuyB83ACNSFtKbd3wbCJSCxQ0UENpVAnp22u18qtUh6j7pET/Z6sTml6xIZj+ezjFbLvva3G1a+mceVs7t3kQwfrLYpx2G85a+UD2rQ2ntpHorcE6L9Yb/Dwi6Pwqv4GL6+1Pi3egIro7Y1j6tv7dwT5/womvZ3YerEb7JitOxvpMgpCIWRgFxmS6exNw3eNw6jc/Ow+NvYOu01WF2RxvkhpmLbMxqmpTCrvKJaIw==";
+  // static const String DO_YXD_KEY =
+  //     "P8tdQriwIdgHVVPW/CVHiUYYkZLFDQunx1+9zE2TnHijB/GSQQCJWQzJFZw0rh+FS0JuLHl7pUDQoRkADtX81+rzP5iGo4RpYj6tMULC5piBW0ZN5DD6ClnIhMr0gIZQjN7gyivCuEPmGxBSqc9UV2f6Y9TTiHTGbTiVO//nEh1E6dlKeGP+b6+r3XrHTbCw8x3oMEqEuwsI/ilRKkioNA0XDBjay7HcJWmKyPEp9MPlLmrnPJwpUQc8bqCPMuPGFjKDFqVniVDKu+U8WtXyUTT4DUfGGLYwByCVxZFnT8xViVpWbVTqiVew4H7TP0MNLiq9lDN2fncZsAd+xGsinspwUolaWvjnH7H2Hba29tuGUhmekWf5n+3tDUkvbpKe/vROl98moU/aMzXhg25kMRThvOpgw3QLz+sJTB0dmqWcqbGeGk1kG++JPWmg5E2TtuGVXQCPfdgYUH6SNveQDyyM1Mg2NzekMDlLiTf9I5ByA3ZEc+uiQ01MZvBjZcjTS+vwrv4OqEREGUBFhzRDCaXPh3dQ4i8nrqZHTaN7d32LA1UmugGv0VC0OifzkEAr3Cca+/ZUNazOxkPqiX9hVMtZmgHkGM5Oq0MSdnRqkWRULG//7u24AJXQXxyRkxbFTg9t3MRMvYxm5fBvdXVwQw1vNJLSC6Iq4hlQvqdeE04FSfpi1DGNYSJHYgfe84VwfmF0s7tgbmWVhWPvTq4BxIvtbCKIsgGchxNlVy+9T9/3WTYjmsDIKjtSDFTCuxpS76lh0vvlIyd9moiOTDe37X/TdlKoUSvUJ+UVU10735eqijCfIsSZem5K5JBMAqsnvVCrAIyvogYrxKHEAbb91+qxYAUIC/6AoFNlJBTNo++F8VjtOlDMHrv2/+18GN41tEBp0yy++8uNdKFfG5n8L2KWU/DQetgCMsbQr2jRoRKbMLE08ORd6VQ/X3QYmgFnkEA2f2xKITqhjG2Zf0jw/gN3s+fSojv9lGT4DhD1N+qFFSPGklspTjyEW5cId1XzFxTKTcLJitty3MaY7S6Bx2Tbe6BgyXzyOetuPTAzcLyERZx9qTOZ0a2EMlS7G/zgRreU+Svth3yNsCFZAPR/+UvjCyAcMGvThI3pv3HVx1zBDspwNR2MXQWepjZk04TMJ8O6UxMWGyLAIHs8p//z5C9P1fPcS5WTUx2CJPC4WEUGF6oNGGzYHBxXyNXgiCxjU8pe974jHgQdkC5r5gfCiiYyJYBa+cu2/DsqZW7D9M8EcS3sxIJ+Ds6v2DU51HOU/NpS4O3ph+HEZOmjfqQGoQ1i6kPoypPSe6PWp5QFTHmcK3HXvdvGhF1Tg3ZOpvPEqTxGbl/E5WUOYVuEOlIgMSnqaopg/DYKPMeYjGBR1Q2xsTLVr4SJCyLVIh6EQuKRqhslIhV7VwC4E19+8AUIvUWBn5PvvlFLJs42hJ2fG6cx+fDWoaBEwQHeaBGRtiLiv/bltwKo0HfcFtk0eM5prjkl9gHl88lTT1rBtzKqpaW9LS/vuE3WTaFAP/WGU4XYQhe18IwIK6+Q5bHHBnI5O05WcxRiGO11W3XhkrI5nBeSy8t6UPKYLKhz6kfNkXpfu7b2qRpyQF5xxKf8oX3ovLyMz8navkyD5PsWz/erftLJRO9soPGYjdmozRJS922NXWJwGQWj1kc1I/IYOfy6Vwvx/3vwxRxfPHtoIuaxT2aK1GX2FvZhhOoBRAmu6IOoyLoFKGVkHZMPqc/9Z0t2ib237gIBVVG/tdNtc2Xt/N4rMBj54maKKsbC+CKrzlRQzWeVo4m17HSAf8qe6w1320X3RdwEwKzcgrJTMDGy0Mk=";
+  //api服地址
+  static const String Api_Url = 'http://kiwi_api';
+  //取api备用线路的网络地址
+  static const String ApiUrlsHost = "";
+  // 2021/4/1/ 第一个版本
+  static const int ApiUrlsHostVersion = 21040101;
+
+  static const String Rtc_Api_Url = 'http://kiwi_rtc';
+}
+
