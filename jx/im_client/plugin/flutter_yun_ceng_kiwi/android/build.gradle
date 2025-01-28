@@ -1,0 +1,47 @@
+group 'com.example.flutter_yun_ceng_kiwi'
+version '1.0'
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        jcenter()
+
+        // 私仓
+        flatDir {
+            dirs project(':flutter_yun_ceng_kiwi').file('libs')
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion 18
+        ndk {
+            abiFilters  "armeabi-v7a", "arm64-v8a", 'armeabi'
+        }
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    // implementation fileTree(dir: 'libs', include: ['*.aar', '*.jar'], exclude: [])
+    // implementation 'androidx.annotation:annotation:1.0.0'
+    implementation(name: 'Kiwi', ext: 'aar')
+}

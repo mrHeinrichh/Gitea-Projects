@@ -1,0 +1,27 @@
+name: flutter_pasteboard
+description: A new flutter plugin project.
+version: 0.0.1
+
+environment:
+  sdk: ">=2.16.2 <3.0.0"
+  flutter: ">=2.5.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  pasteboard: ^0.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: com.example.flutter_pasteboard
+        pluginClass: FlutterPasteboardPlugin
+      ios:
+        pluginClass: FlutterPasteboardPlugin
